@@ -14,6 +14,8 @@ public class ServicesTest extends BaseTest {
                 .clickAllServices()
                 .clickBeelineBonus()
                 .clickForInternet()
-                .clickRoaming();
+                .clickRoaming()
+                .clickEntertainment()
+                .clickInternetSharing();
     }
 }

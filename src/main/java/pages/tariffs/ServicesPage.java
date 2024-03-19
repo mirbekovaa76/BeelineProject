@@ -82,6 +82,19 @@ public class ServicesPage extends BasePage {
     @FindBy(xpath = "//button[@class='roaming__btn']")
     public WebElement internationalCallsOnRoamingBtn;
 
+    // for Entertainment section
+    @FindBy(xpath = "(//a[@class='hotlink__item'])[5]")
+    public WebElement entertainmentSectionBtn;
+    @FindBy(xpath = "(//a[@class='services-title vas_link'])[1]")
+    public WebElement entertainmentPackage;
+
+    // for InternetSharing section
+    @FindBy(xpath = "(//a[@class='hotlink__item'])[6]")
+    public WebElement internetSharingBtn;
+
+
+
+
     public ServicesPage clickAllServices(){
         webElementHelper
                 .click(russianLangBtn)
@@ -104,7 +117,6 @@ public class ServicesPage extends BasePage {
                 .click(internationalCallsBtn)
                 .click(roamingBtn)
                 .click(othersBtn);
-        browserManager.goBack();
         return this;
     }
 
@@ -117,7 +129,6 @@ public class ServicesPage extends BasePage {
 //                .waitForButtonToBeClickAble(termsOfRedemptionFAG).click(termsOfRedemptionFAG)
 //                .click(commandsManagementFAG)
 //                .click(additionalTermsFAG);
-        browserManager.goBack();
         return this;
     }
 
@@ -126,7 +137,6 @@ public class ServicesPage extends BasePage {
                 .click(homeServicesBtn)
                 .click(forInternetBtn)
                 .click(packageInternetBtn);
-        browserManager.goBack();
         return this;
 
     }
@@ -141,6 +151,22 @@ public class ServicesPage extends BasePage {
         Thread.sleep(5000);
         webElementHelper
                 .click(internationalCallsOnRoamingBtn);
+        return this;
+    }
+
+    public ServicesPage clickEntertainment(){
+        webElementHelper
+                .click(homeServicesBtn)
+                .click(entertainmentSectionBtn)
+                .click(entertainmentPackage);
+        return this;
+    }
+
+    public ServicesPage clickInternetSharing(){
+        webElementHelper
+                .click(homeServicesBtn)
+                .click(internetSharingBtn);
+        browserManager.goBack();
         return this;
     }
 }
